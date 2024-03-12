@@ -28,11 +28,13 @@ const images = [
 const list = document.querySelector(".gallery");
 
 const items = images.map((item) => {
+  const listItem = document.createElement("li");
   const imgEl = document.createElement("img");
   imgEl.src = item.url;
   imgEl.alt = item.alt;
 
-  return imgEl;
+  listItem.appendChild(imgEl);
+  return listItem;
 });
 console.log(items);
 
@@ -40,13 +42,10 @@ list.append(...items);
 
 // or
 
-// const list = document.querySelector(".gallery");
-// list.classList.add("gallery");
+// const gallery = document.querySelector(".gallery");
 
 // const items = images
-//   .map((item) => {
-//     return `<li><img src="${item.url}" alt="${item.alt}" /></li>`;
-//   })
+//   .map((image) => `<li><img src="${image.url}" alt="${image.alt}" /></li>`)
 //   .join("");
 
-// list.insertAdjacentHTML("beforeend", items);
+// gallery.insertAdjacentHTML("beforeend", items);
