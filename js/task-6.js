@@ -9,16 +9,12 @@ const createElement = document.querySelector("button[data-create]");
 const destroyElement = document.querySelector("button[data-destroy]");
 const divElement = document.querySelector("#boxes");
 
-let width = 30;
-let height = 30;
+inputElement.addEventListener("input", (event) => {
+  const amount = event.currentTarget.value;
+});
 
-inputElement.addEventListener("input", onInput);
 createElement.addEventListener("click", onCreate);
 destroyElement.addEventListener("click", destroyBoxes);
-
-function onInput(event) {
-  const amount = event.currentTarget.value;
-}
 
 function onCreate() {
   const amount = parseInt(inputElement.value, 10);
@@ -52,7 +48,4 @@ function destroyBoxes() {
   divElement.innerHTML = "";
 
   inputElement.value = "";
-
-  width = 30;
-  height = 30;
 }
